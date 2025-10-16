@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket         = "my-terraform-state-bucket-junaed"
+    key            = "terraform/efs-ec2/main.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+  }
+}
 
 # This is required for everything
 provider "aws" {
